@@ -1,0 +1,51 @@
+@model Mooder.Models.UserMoodEntry
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mx-auto">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Do You Want to Delete This?</h4>
+                    <hr />
+                    <dl class="row justify-content-center">
+                        <dt class="col-sm-2 text-left">
+                            @Html.DisplayNameFor(model => model.Date)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Date)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Time)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Time)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Mood)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Mood)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Notes)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Notes)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <form asp-action="Delete" class="d-flex align-items-center">
+                        <input type="hidden" asp-for="Id" />
+                        <a asp-action="Index" class="btn btn-secondary" style="margin-right: 12px;">Back to List</a>
+                        <button type="submit" class="btn btn-danger mr-2">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+@model Mooder.Models.MoodSearchViewModel
+@{
+    ViewData["Title"] = "Overview";
+}
+
+<h1>Overview</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get" class="form-inline mb-3">
+    <div class="d-flex align-items-end">
+        <div class="col-md-4 mb-2">
+            <label asp-for="SearchMood" class="sr-only">Mood</label>
+            <select asp-for="SearchMood" asp-items="Model.MoodSelectList" class="form-control">
+                <option value="">All Moods</option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-2">
+            <label asp-for="SearchDate" class="sr-only">Date</label>
+            <input type="date" asp-for="SearchDate" class="form-control"
+                value="@Model.SearchDate?.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="col-md-4 mb-2">
+            <label class="sr-only"></label>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entries.First().Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entries.First().Mood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entries.First().Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entries.First().Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Entries.Take(10))
+        {
+            <tr>
+                <td>
+                    @item.Date.ToString("dd MMM yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mood)
+                </td>
+                <td>
+                    @item.Time.ToString("hh\\:mm tt")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--JS?-->
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-end">
+        @for (int i = 1; i <= Math.Ceiling((double)Model.Entries.Count / 10); i++)
+        {
+            <li class="page-item @(i == 1 ? "active" : "")">
+                <a class="page-link" href="?pageNumber=@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
