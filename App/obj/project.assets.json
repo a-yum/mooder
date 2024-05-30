@@ -8572,11 +8572,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Andrew/Desktop/projects/Mooder/Mooder.csproj",
+      "projectUniqueName": "/Users/Andrew/Desktop/CSC352/Depaul_SE_352_Group3/Mooder/Mooder.csproj",
       "projectName": "Mooder",
-      "projectPath": "/Users/Andrew/Desktop/projects/Mooder/Mooder.csproj",
+      "projectPath": "/Users/Andrew/Desktop/CSC352/Depaul_SE_352_Group3/Mooder/Mooder.csproj",
       "packagesPath": "/Users/Andrew/.nuget/packages/",
-      "outputPath": "/Users/Andrew/Desktop/projects/Mooder/obj/",
+      "outputPath": "/Users/Andrew/Desktop/CSC352/Depaul_SE_352_Group3/Mooder/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Andrew/.nuget/NuGet/NuGet.Config"
