@@ -21,7 +21,7 @@
 
 ## Features
 - **CRUD Operations**: Users can CRUD mood entries; includes: date, time, mood, notes.
-- **Database**: Store mood entries in SQLite DB; managed by EF Core.
+- **Database**: Store mood entries in SQLite DB.
 - **Filter Search**: Filter mood entries by mood and/or date.
 - **Data Visualization**: Utilizes chart.js to visualize mood entry data.
 
