@@ -9,10 +9,10 @@
 
 ### Frameworks & Libraries
 - ASP.NET Core MVC
+- EF Core
 - Chart.js
 
 ### Database Technologies
-- Entity Framework Core
 - SQLite
 
 ### Testing
